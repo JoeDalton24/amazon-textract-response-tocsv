@@ -1,0 +1,26 @@
+{
+  "name": "amazon-textract-response-tocsv",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This library loads Amazon Textract API response JSONs into csv with helper methods, for easier post-processing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeDalton24/amazon-textract-response-tocsv.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "Amazon",
+    "Textract"
+  ],
+  "author": "Ibrahima Diama ka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoeDalton24/amazon-textract-response-tocsv/issues"
+  },
+  "homepage": "https://github.com/JoeDalton24/amazon-textract-response-tocsv#readme"
+}
