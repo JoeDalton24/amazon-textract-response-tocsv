@@ -85,7 +85,7 @@ function getTableCsvResults(response) {
   return csv;
 }
 
-export async function writeTableToCsv(
+export async function writeTablesToCsv(
   amazon_textract_response,
   relative_path = new URL("tables_output.csv", import.meta.url)
 ) {

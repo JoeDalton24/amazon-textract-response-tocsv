@@ -1,5 +1,5 @@
 import { readFile } from "fs/promises";
-import { writeTableToCsv } from "./src/extractTableTocsv.js";
+import { writeTablesToCsv } from "./src/extractTableTocsv.js";
 import { writeKeyValuePairToCsv } from "./src/exportKeyValuePairToCsv.js";
 
 (async function () {
@@ -10,6 +10,6 @@ import { writeKeyValuePairToCsv } from "./src/exportKeyValuePairToCsv.js";
 
   const data = JSON.parse(files);
 
-  await writeTableToCsv(data);
+  await writeTablesToCsv(data);
   await writeKeyValuePairToCsv(data);
 })();
