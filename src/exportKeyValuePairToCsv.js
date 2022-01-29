@@ -64,7 +64,7 @@ function getText(result, blocks_map) {
   return text;
 }
 
-export function getKeyValue(response) {
+function getKeyValue(response) {
   const { key_map, value_map, block_map } = getKvMap(response);
   return getKvRelationship(key_map, value_map, block_map);
 }
@@ -76,7 +76,6 @@ export async function writeKeyValuePairToCsv(
   if (!amazon_textract_response || !amazon_textract_response["Blocks"].length)
     return;
   const output = getKeyValue(amazon_textract_response);
-  const writeTable = writeFileWithName(JSON.stringify(output));
-  // console.log(output);
+  const writeTable = writeFileWithName(JSON.stringify(output, null, 2));
   await writeTable(relative_path);
 }
