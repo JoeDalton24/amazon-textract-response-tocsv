@@ -5,15 +5,15 @@ amazon-textract-response-tocsv export tables and extract key-value pairs in form
 # export tables from JSON returned by Amazon Textract
 
 ```
-import { writeTablesToCsv } from "amazon-textract-response-tocsv";
+import { writeTables } from "amazon-textract-response-tocsv";
 
 const analyze_document_text = async () => {
   try {
     const analyzeDoc = new AnalyzeDocumentCommand(params);
     const response = await textractClient.send(analyzeDoc);
 
-    //call writeTablesToCsv with the response
-    await writeTablesToCsv(response)
+    //call writeTables with the response
+    await writeTables(response)
   } catch (err) {
     console.log("Error", err);
   }
@@ -21,30 +21,30 @@ const analyze_document_text = async () => {
 
 ```
 
-# How to use writeTablesToCsv
+# How to use writeTables
 
-The writeTablesToCsv function of amazon-texttract-response-tocsv takes two parameters the
-JSON returned by Amazon Textract and the relative path where you want the csv to be written
+The writeTables function of amazon-textract-response-tocsv take one parameters the
+JSON returned by Amazon Textract.
 
-the second parameter is optional if it is not filled in, the file will be exported to your working directory and will be named 'tables_output.csv'.
+And the export the data in an file named tables_output.csv"
 
 ```
-await writeTablesToCsv(response,'relative_path')
+await writeTables(response)
 
 ```
 
 # export key-value pairs from JSON returned by Amazon Textract
 
 ```
-import { writeKeyValuePairToCsv } from "amazon-textract-response-tocsv";
+import { writeKeyValuePair } from "amazon-textract-response-tocsv";
 
 const analyze_document_text = async () => {
   try {
     const analyzeDoc = new AnalyzeDocumentCommand(params);
     const response = await textractClient.send(analyzeDoc);
 
-    //call writeKeyValuePairToCsv with the response
-    await writeKeyValuePairToCsv(response)
+    //call writeKeyValuePair with the response
+    await writeKeyValuePair(response)
   } catch (err) {
     console.log("Error", err);
   }
@@ -52,14 +52,13 @@ const analyze_document_text = async () => {
 
 ```
 
-# How to use writeKeyValuePairToCsv
+# How to use writeKeyValuePair
 
-The writeKeyValuePairToCsv function just like the writeTablesToCsv function of amazon-texttract-response-tocsv takes two parameters the
-JSON returned by Amazon Textract and the relative path where you want the csv to be written
+The writeKeyValuePair function just like the writeTables function of amazon-texttract-response-tocsv takes one parameters the
+JSON returned by Amazon Textract
 
-the only difference is that if the second parameter is not filled in, the export file will be named 'key_value_output.csv'
+the only difference is that the exported file will be named 'key_value_output.csv'
 
 ```
-await writeKeyValuePairToCsv(response,'relative_path');
-
+await writeKeyValuePair(response);
 ```

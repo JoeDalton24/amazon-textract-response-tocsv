@@ -1,4 +1,5 @@
 import { writeFileWithName } from "../utils/writeCsvFile.js";
+import path from "path";
 
 function getKvMap(response) {
   const blocks = response["Blocks"];
@@ -69,13 +70,11 @@ function getKeyValue(response) {
   return getKvRelationship(key_map, value_map, block_map);
 }
 
-export async function writeKeyValuePairToCsv(
-  amazon_textract_response,
-  relative_path = new URL("key_value_output.csv", import.meta.url)
-) {
+export async function writeKeyValuePairToCsv(amazon_textract_response) {
   if (!amazon_textract_response || !amazon_textract_response["Blocks"].length)
     return;
+
   const output = getKeyValue(amazon_textract_response);
   const writeTable = writeFileWithName(JSON.stringify(output, null, 2));
-  await writeTable(relative_path);
+  await writeTable(path.resolve("./").concat("/key_value_output.csv.csv"));
 }

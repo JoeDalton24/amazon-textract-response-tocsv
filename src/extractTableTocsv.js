@@ -1,4 +1,5 @@
 import { writeFileWithName } from "../utils/writeCsvFile.js";
+import path from "path";
 
 function getRowsColumnsMap(table_result, blocks_map) {
   const rows = {};
@@ -85,13 +86,11 @@ function getTableCsvResults(response) {
   return csv;
 }
 
-export async function writeTablesToCsv(
-  amazon_textract_response,
-  relative_path = new URL("tables_output.csv", import.meta.url)
-) {
+export async function writeTablesToCsv(amazon_textract_response) {
   if (!amazon_textract_response || !amazon_textract_response["Blocks"].length)
     return;
+
   const output = getTableCsvResults(amazon_textract_response);
   const writeTable = writeFileWithName(output);
-  await writeTable(relative_path);
+  await writeTable(path.resolve("./").concat("/tables_output.csv"));
 }
