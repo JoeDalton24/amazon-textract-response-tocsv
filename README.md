@@ -26,7 +26,7 @@ const analyze_document_text = async () => {
 The writeTables function of amazon-textract-response-tocsv take one parameters the
 JSON returned by Amazon Textract.
 
-And the export the data in an file named tables_output.csv"
+And then exports data in an file named tables_output.csv"
 
 ```
 await writeTables(response)
@@ -54,8 +54,7 @@ const analyze_document_text = async () => {
 
 # How to use writeKeyValuePair
 
-The writeKeyValuePair function just like the writeTables function of amazon-texttract-response-tocsv takes one parameters the
-JSON returned by Amazon Textract
+The writeKeyValuePair function just like the writeTables function of amazon-textract-response-tocsv takes one parameters the JSON returned by Amazon Textract
 
 the only difference is that the exported file will be named 'key_value_output.csv'
 
