@@ -25,6 +25,7 @@
     "Amazon",
     "Textract"
   ],
+  "files": ["dist"],
   "author": "Ibrahima Diama ka",
   "license": "ISC",
   "bugs": {
