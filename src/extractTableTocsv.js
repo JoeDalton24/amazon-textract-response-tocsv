@@ -1,5 +1,5 @@
-import { writeFileWithName } from "../utils/writeCsvFile.js";
 import path from "path";
+import { writeFileWithName } from "../utils/writeCsvFile.js";
 
 function getRowsColumnsMap(table_result, blocks_map) {
   const rows = {};
