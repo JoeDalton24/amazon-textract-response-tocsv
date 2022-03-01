@@ -1,6 +1,6 @@
 {
   "name": "amazon-textract-response-tocsv",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This library loads Amazon Textract API response JSONs into csv with helper methods, for easier post-processing.",
   "type": "module",
   "main": "dist/cjs/index.js",
