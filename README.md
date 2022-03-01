@@ -1,6 +1,7 @@
 # Amazon Textract Response to CSV 🧩
 
 **Amazon Textract Response to CSV** export tables and extract `key-value` pairs in form documents from `JSON` returned by Amazon Textract into a comma-separated values (CSV) file.
+This module work both with ESM and CommonJs
 
 [![Made-In-Senegal](https://github.com/GalsenDev221/made.in.senegal/blob/master/assets/badge.svg)](https://github.com/GalsenDev221/made.in.senegal)
 
@@ -28,7 +29,22 @@ The writeTables function of **Amazon Textract Response to CSV** take one paramet
 JSON returned by Amazon Textract.  
 And then exports data in an file named : `tables_output.csv`
 
+# import with esm
+
 ```javascript
+import { writeTables, writeKeyValuePair } from "amazon-textract-response-tocsv";
+
+await writeTables(response);
+```
+
+# import with commonjs
+
+```javascript
+const {
+  writeTables,
+  writeKeyValuePair,
+} = require("amazon-textract-response-tocsv");
+
 await writeTables(response);
 ```
 
